@@ -22,7 +22,7 @@ export const HubspotIntegration = ({ user, org, integrationParams, setIntegratio
             const response = await axios.post(`http://localhost:8000/integrations/hubspot/authorize`, formData);
             const authURL = response?.data;
 
-            const newWindow = window.open(authURL, 'HubSpot Authorization', 'width=600,height=600');
+            const newWindow = window.open(authURL, 'Hubspot Authorization', 'width=600, height=600');
 
             // Polling for the window to close
             const pollTimer = window.setInterval(() => {
@@ -48,7 +48,7 @@ export const HubspotIntegration = ({ user, org, integrationParams, setIntegratio
             if (credentials) {
                 setIsConnecting(false);
                 setIsConnected(true);
-                setIntegrationParams(prev => ({ ...prev, credentials: credentials, type: 'HubSpot' }));
+                setIntegrationParams(prev => ({ ...prev, credentials: credentials, type: 'Hubspot' }));
             }
             setIsConnecting(false);
         } catch (e) {
